@@ -50,7 +50,19 @@ var ibmdb = require('ibm_db');
         return { dberror : e }
     }
    }
-   
+
+ function dbQuery(dsn, query) {
+    try {
+       var conn=ibmdb.openSync(dsn);
+       
+       var data=conn.querySync(query);
+       conn.closeSync();
+     
+       return {data : data, input: query};
+    } catch (e) {
+        return { dberror : e }
+    }
+   }   
 
 function main(params) {
     dsn=params.__bx_creds[Object.keys(params.__bx_creds)[0]].dsn;
@@ -62,6 +74,8 @@ function main(params) {
             return fetchEventByDates(dsn,params.eventdates);
         case "searchByName":
             return fetchEventByShortname(dsn,params.eventname);
+        case "query":
+            return dbQuery(dsn,params.query)
         default:
             return { dberror: "No action defined", actionname: params.actionname}
     }
