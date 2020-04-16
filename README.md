@@ -1,3 +1,7 @@
+# Forward related to the Fork
+- This is a fork of a Db2 backed chatbot that now can also be used as CRUD backend.
+- If you only need a Db2 backend follow the instructions and leave out the Slack and Watson Assistant parts.
+
 **Note:**   
 Code relating to a previous version of the tutorial that utilized the now deprecated `web_action` to call Cloud Function actions is  available in the branch [20191211_web_action](https://github.com/IBM-Cloud/slack-chatbot-database-watson/tree/20191211_web_action). The current version is using a webhook in IBM Watson Assistant to invoke the serverless functionality.
 
