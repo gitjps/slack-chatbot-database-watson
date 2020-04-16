@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "d6cbdae3-b755-4cf2-8828-8a4e4f1c985f",
+		"name": "Slack Db2 Chatbot & CRUD backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Dispatch",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Require-Whisk-Auth",
+						"value": "YOURSECRET",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://eu-de.functions.cloud.ibm.com/api/v1/web/xxx/slackdemo/dispatch.json?actionname=searchByDates&eventdates=2019-01-01,2019-12-31",
+					"protocol": "https",
+					"host": [
+						"eu-de",
+						"functions",
+						"cloud",
+						"ibm",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"web",
+						"4d0fd1f6-6901-42bf-9d1f-c8ab4c2bd55c",
+						"slackdemo",
+						"dispatch.json"
+					],
+					"query": [
+						{
+							"key": "actionname",
+							"value": "searchByDates"
+						},
+						{
+							"key": "eventdates",
+							"value": "2019-01-01,2019-12-31"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Require-Whisk-Auth",
+						"type": "text",
+						"value": "Wall12Dorf"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://eu-de.functions.cloud.ibm.com/api/v1/web/xxx/slackdemo/dispatch.json?actionname=query&query=select * from events",
+					"protocol": "https",
+					"host": [
+						"eu-de",
+						"functions",
+						"cloud",
+						"ibm",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"web",
+						"4d0fd1f6-6901-42bf-9d1f-c8ab4c2bd55c",
+						"slackdemo",
+						"dispatch.json"
+					],
+					"query": [
+						{
+							"key": "actionname",
+							"value": "query"
+						},
+						{
+							"key": "query",
+							"value": "select * from events"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "bca19b6e-10ae-42d6-9579-43659cf041bc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "fef37b53-1f91-4505-98a1-3eac6ed6917a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
