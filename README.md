@@ -2,9 +2,14 @@
 - This is a fork of a Db2 backed chatbot that now can also be used as a CRUD backend leveraging Db2 on IBM Cloud.
 - If you only need a Db2 backend follow the tutorial below and leave out the Slack and Watson Assistant parts.
 
-## Chnages to the original repo
+## Changes to the original repo
 - [dispatch.js](dispatch.js) now contains a dbQuery function that can be used to perform queries against the database
 - [Slack Db2 Chatbot & CRUD backend.postman_collection.json](Slack%20Db2%20Chatbot%20&%20CRUD%20backend.postman_collection.json) contains the Postman collection
+
+## SQL Queries
+Db2 supports SQL and a query like **SELECT * FROM EVENTS** can be performed by using Postman or curl (use YOURSECRET as password).
+
+![curl request](curl.jpg)
 
 # Original Tutorial
 
